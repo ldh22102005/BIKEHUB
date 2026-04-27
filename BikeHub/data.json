@@ -1,0 +1,53 @@
+{
+  "categories": [
+    { "id": "cat1", "icon": "motorbike",   "label": "Xe máy" },
+    { "id": "cat2", "icon": "wrench",      "label": "Dịch vụ" },
+    { "id": "cat3", "icon": "tag-outline", "label": "Khuyến mãi" }
+  ],
+
+  "newProducts": [
+    { "id": "p1", "name": "Panigale V4 S",  "price": "1.290.000.000đ", "image": null },
+    { "id": "p2", "name": "AeroRide X",     "price": "125.000.000đ",   "image": null },
+    { "id": "p3", "name": "SkyBolt Pro",    "price": "89.000.000đ",    "image": null },
+    { "id": "p4", "name": "Kawasaki Z1000", "price": "450.000.000đ",   "image": null }
+  ],
+
+  "collections": [
+    {
+      "id": "c1",
+      "title": "Xe máy phân khối lớn",
+      "items": [
+        { "id": "c1p1", "name": "Ducati Monster", "price": "550.000.000đ", "image": null },
+        { "id": "c1p2", "name": "Honda CB650R",   "price": "235.000.000đ", "image": null },
+        { "id": "c1p3", "name": "Yamaha MT-09",   "price": "280.000.000đ", "image": null },
+        { "id": "c1p4", "name": "BMW S1000RR",    "price": "980.000.000đ", "image": null },
+        { "id": "c1p5", "name": "KTM Duke 390",   "price": "165.000.000đ", "image": null },
+        { "id": "c1p6", "name": "Triumph Street", "price": "320.000.000đ", "image": null }
+      ]
+    },
+    {
+      "id": "c2",
+      "title": "Xe đạp hiệu năng cao",
+      "items": [
+        { "id": "c2p1", "name": "Trek Domane",     "price": "45.000.000đ", "image": null },
+        { "id": "c2p2", "name": "Giant Propel",    "price": "38.000.000đ", "image": null },
+        { "id": "c2p3", "name": "Specialized Allez","price": "52.000.000đ", "image": null },
+        { "id": "c2p4", "name": "Cannondale CAAD", "price": "29.000.000đ", "image": null },
+        { "id": "c2p5", "name": "Scott Addict",    "price": "67.000.000đ", "image": null },
+        { "id": "c2p6", "name": "Merida Scultura", "price": "33.000.000đ", "image": null }
+      ]
+    },
+    {
+      "id": "c3",
+      "title": "Xe điện thông minh",
+      "items": [
+        { "id": "c3p1", "name": "VinFast Klara",   "price": "21.000.000đ", "image": null },
+        { "id": "c3p2", "name": "Yadea G5",        "price": "18.000.000đ", "image": null },
+        { "id": "c3p3", "name": "Pega Mann+",      "price": "15.000.000đ", "image": null },
+        { "id": "c3p4", "name": "DatBike Weaver",  "price": "39.000.000đ", "image": null },
+        { "id": "c3p5", "name": "Honda U-Go",      "price": "25.000.000đ", "image": null },
+        { "id": "c3p6", "name": "Xe điện Selex",   "price": "17.000.000đ", "image": null }
+      ]
+    }
+  ]
+}

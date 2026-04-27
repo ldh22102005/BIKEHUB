@@ -1,90 +1,136 @@
-import React from 'react';
+import React from "react";
 import {
-    View, 
-    StyleSheet,
-    SafeAreaView,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    Keyboard,
-    TouchableWithoutFeedback,
-    Image,
-} from 'react-native';
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Keyboard,
+  TouchableWithoutFeedback,
+  StyleSheet,
+} from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-export default function Register() {
-    return (
-        <SafeAreaView style={style.vung_ngoai_cung}>
-            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <View style={{ flex: 1 }}> 
-                    
-                    {/* 1. Header để ở ngoài, không bị dính paddingHorizontal: 20 */}
-                    <View style={style.hop_header}>
-                        <TouchableOpacity style={style.nut_back_absolute}>
-                            <MaterialCommunityIcons name="arrow-left" size={24} color="#00352c" />
-                        </TouchableOpacity>
-                        <Text style={style.text_logo}>BIKEHUB</Text>
-                    </View>
+export default function Register({ goLogin }) {
+  return (
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View style={styles.container}>
 
-                    {/* 2. Phần nội dung dưới này mới cần padding để không bị sát mép */}
-                    <View style={{ flex: 1, paddingHorizontal: 20 }}>
-                        <View style={style.vung_tieu_de}>
-                            <Text style={style.ten_tieu_de}> TẠO TÀI KHOẢN</Text>
-                            <Text style={style.mo_ta}>dang lam phan dang ky cua bai </Text>
-                        </View>   
-                    </View>
+        {/* Main */}
+        <View style={styles.main}>
+          <Text style={styles.title}>Đăng ký</Text>
 
-                    <View style={style.hop_form}>
-                        <Text style={style.nhan_input}>Họ và tên </Text>
-                        <TextInput style={style.o_input} placeholder="Nguyễn Văn A"></TextInput>
-                        <Text style={style.nhan_input}>Email </Text>
-                        <TextInput style={style.o_input} placeholder="example@gmail.com"  keyboardType="email-address" placeholderTextColor="#999"></TextInput>
-                        <Text style={style.nhan_input}>Mật khẩu </Text>
-                        <TextInput style={style.o_input} placeholder="••••••••" secureTextEntry></TextInput>
-                        <MaterialCommunityIcons name="eye-outline" size={20} color="#999" />
-                    </View>
-                    
-                    
+          {/* Tab */}
+          <View style={styles.tab}>
+            <TouchableOpacity style={styles.tabBtn} onPress={goLogin}>
+              <Text style={styles.inactiveText}>ĐĂNG NHẬP</Text>
+            </TouchableOpacity>
+            <View style={[styles.tabBtn, styles.active]}>
+              <Text style={styles.activeText}>ĐĂNG KÝ</Text>
+            </View>
+          </View>
 
-                </View>
-            </TouchableWithoutFeedback>
-        </SafeAreaView>
-    );
+          {/* Form */}
+          <Text style={styles.label}>HỌ VÀ TÊN</Text>
+          <TextInput style={styles.input} placeholder="Nguyễn Văn A" />
+
+          <Text style={styles.label}>EMAIL</Text>
+          <TextInput style={styles.input} placeholder="email@gmail.com" />
+
+          <Text style={styles.label}>MẬT KHẨU</Text>
+          <View style={styles.pass}>
+            <TextInput style={{ flex: 1 }} placeholder="*****" secureTextEntry />
+            <MaterialCommunityIcons name="eye-outline" size={20} color="#666" />
+          </View>
+
+          <Text style={styles.label}>XÁC NHẬN</Text>
+          <View style={styles.pass}>
+            <TextInput style={{ flex: 1 }} placeholder="*****" secureTextEntry />
+            <MaterialCommunityIcons name="eye-outline" size={20} color="#666" />
+          </View>
+
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>ĐĂNG KÝ</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </TouchableWithoutFeedback>
+  );
 }
 
-const style = StyleSheet.create({
-vung_ngoai_cung: {
-        flex: 1,
-        backgroundColor: "#f9f9f9",
-    },
-hop_header: {
-    width: '100%',
-    height: 60,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center', // Giúp chữ BIKEHUB luôn ở giữa
-    backgroundColor: '#fff',
-    borderBottomWidth: 0.5,
-    borderColor: '#ddd',
-    paddingHorizontal: 20,
-},
-nut_back_absolute: {
-    position: 'absolute',
-    left:0,             
-    zIndex: 1,
-},
-text_logo: {
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#F9F9FB",
+  },
+  logo: {
     fontSize: 18,
-    fontWeight: 'bold',
-    color: '#00352C',
-    letterSpacing: 1,
-},
-mo_ta:{
-    fontSize:14,
-    fontWeight:'bold',
-    marginTop:10,
-},
-
-
-   
+    fontWeight: "bold",
+    color: "#00352C",
+  },
+  main: {
+    flex: 1,
+    backgroundColor: "#fff",
+    margin: 10,
+    padding: 20,
+    borderRadius: 20,
+  },
+  title: {
+    fontSize: 26,
+    fontWeight: "bold",
+    textAlign: "center",
+    marginBottom: 20,
+  },
+  tab: {
+    flexDirection: "row",
+    backgroundColor: "#eee",
+    borderRadius: 20,
+    marginBottom: 20,
+  },
+  tabBtn: {
+    flex: 1,
+    padding: 10,
+    alignItems: "center",
+  },
+  active: {
+    backgroundColor: "#00352C",
+    borderRadius: 20,
+  },
+  activeText: {
+    color: "#fff",
+    fontWeight: "bold",
+  },
+  inactiveText: {
+    color: "#888",
+  },
+  label: {
+    marginTop: 10,
+    marginBottom: 5,
+    fontWeight: "bold",
+    color: "#666",
+  },
+  input: {
+    backgroundColor: "#f5f5f5",
+    height: 45,
+    borderRadius: 10,
+    paddingHorizontal: 10,
+  },
+  pass: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#f5f5f5",
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    height: 45,
+  },
+  button: {
+    marginTop: 20,
+    backgroundColor: "#00352C",
+    padding: 15,
+    borderRadius: 10,
+    alignItems: "center",
+  },
+  buttonText: {
+    color: "#fff",
+    fontWeight: "bold",
+  },
 });
